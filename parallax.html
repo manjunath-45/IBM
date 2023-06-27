@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parallax Webpage</title>
+  <style>
+    {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    .parallax-section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      perspective: 1px;
+    }
+
+    .parallax-section:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('rohit.jpg');
+      background-size: cover;
+      z-index: -1;
+    }
+
+    .parallax-content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      color: #fff;
+    }
+
+    .parallax-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .parallax-content p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .parallax-content a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .parallax-section:nth-child(even) {
+      background-color: #f4f4f4;
+    }
+
+    .parallax-section:nth-child(even) .parallax-content {
+      color: #333;
+    }
+
+    .parallax-section:nth-child(odd) .parallax-content {
+      margin-top: 100px;
+    }
+
+    /* Additional styling */
+    #section1 .parallax-section:before {
+      background-image: url('rohit.jpg');
+    }
+
+    #section2 .parallax-section:before {
+      background-image: url('virat.jpg');
+    }
+
+    #section3 .parallax-section:before {
+      background-image: url('dhoni.jpg');
+    }
+
+    #section4 .parallax-section:before {
+      background-image: url('sachin.jpg');
+    }
+
+    #section2 .parallax-content {
+      margin-top: 0;
+    }
+
+    #section3 .parallax-content {
+      margin-top: 200px;
+    }
+
+    #section4 .parallax-content {
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="section1" class="parallax-section">
+    <div class="parallax-content">
+      <h1>Welcome to Parallax Webpage</h1>
+      <p>This is a stunning parallax scrolling effect created using HTML and CSS.</p>
+      <a href="#section2">Learn More</a>
+    </div>
+  </div>
+
+  <div id="section2" class="parallax-section">
+    <div class="parallax-content">
+      <h1>About Us</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla ex eget lorem luctus, eget fringilla turpis lobortis.</p>
+      <a href="#section3">Our Services</a>
+    </div>
+  </div>
+
+  <div id="section3" class="parallax-section">
+    <div class="parallax-content">
+      <h1>Our Services</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla ex eget lorem luctus, eget fringilla turpis lobortis.</p>
+      <a href="#section4">Contact Us</a>
+    </div>
+  </div>
+
+  <div id="section4" class="parallax-section">
+    <div class="parallax-content">
+      <h1>Contact Us</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla fringilla ex eget lorem luctus, eget fringilla turpis lobortis.</p>
+      <a href="#section1">Back to Top</a>
+    </div>
+  </div>
+</body>
+</html>
