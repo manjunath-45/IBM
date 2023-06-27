@@ -1,2 +1,1 @@
-# IBM JAVA
-training 
+IIHT Traininhg
