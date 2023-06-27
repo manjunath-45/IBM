@@ -1,1 +1,1 @@
-IIHT Traininhg
+IIHT Training
