@@ -1,6 +1,11 @@
 package com.ibm.customer_project.model;
 
+
+
+
 public class Customer {
+	
+	
 
 	private int customerId;
 	private String firstname;
@@ -10,6 +15,16 @@ public class Customer {
 	public Customer() {
 		super();
 	}
+	
+	
+
+	public Customer(String firstname, String last_name, String email) {
+		super();
+		this.firstname = firstname;
+		this.last_name = last_name;
+		this.email = email;
+	}
+
 
 	public Customer(int customerId, String firstname, String last_name, String email) {
 		super();
@@ -56,6 +71,5 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 	
 }
