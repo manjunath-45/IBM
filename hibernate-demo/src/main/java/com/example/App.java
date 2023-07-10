@@ -33,12 +33,24 @@ public class App
     	  System.out.println(i); 
     	  */
     	  
-    	  List<Inventory> i =  service.getAllInventory();
+    	 /*
+    	   List<Inventory> i =  service.getAllInventory();
     	  for(Inventory ii:i)
     	  {
     		  System.out.println(i);
     	  }
-    	
+    	*/
+    	  
+    	 Inventory  i = service.getAllnventory(101);
+    	 if(i==null)
+    	 {
+    		 System.out.println("no such is food ");
+    		 
+    	 }
+    	 else 
+    	 {
+    		 System.out.println(i);
+    	 }
     	  
       }
       catch(Exception e)

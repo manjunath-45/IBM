@@ -1,6 +1,7 @@
 package com.example.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.TypedQuery;
 
@@ -33,9 +34,16 @@ public class InventoryServiceImpl implements InventoryService {
 	public List<Inventory> getAllInventory() {
 		// TODO Auto-generated method stub
 		session = sessionFactory.openSession();
-		TypedQuery<Inventory> query = session.createQuery("FROM Inventory" , Inventory.class);
+		TypedQuery<Inventory> query = session.createQuery("FROM Inventory I" , Inventory.class);
 		List<Inventory> list =query.getResultList();
 		return list;
+	}
+	@Override
+	public Inventory getAllnventory(int inventoryId) {
+		// TODO Auto-generated method stub
+		session = sessionFactory.openSession();
+		Inventory i = session.find(Inventory.class, inventoryId);
+		return i;
 	}
 	
 	
