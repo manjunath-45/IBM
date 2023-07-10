@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -23,9 +25,20 @@ public class App
           System.out.println("One Item Saved...");
           */
     	  
+    	 
     	  InventoryService service=new InventoryServiceImpl();
+    	  
+    	  /*
     	  Inventory i = service.createInventory(new Inventory(105,108,"top",65));
-    	  System.out.println(i);
+    	  System.out.println(i); 
+    	  */
+    	  
+    	  List<Inventory> i =  service.getAllInventory();
+    	  for(Inventory ii:i)
+    	  {
+    		  System.out.println(i);
+    	  }
+    	
     	  
       }
       catch(Exception e)
