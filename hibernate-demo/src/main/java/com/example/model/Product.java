@@ -30,5 +30,11 @@ public class Product {
 	private  String productName;
 	@Column(name="product_price")
 	private double productPrice;
-
+	public Product(String productName, double productPrice, int productId) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.productPrice = productPrice;
+	}
+	
 }

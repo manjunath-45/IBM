@@ -53,11 +53,69 @@ public class ProductServiceImpl implements ProductService{
 	public List<Product> getProductByName(String productName) {
 		// TODO Auto-generated method stub
 		session = sessionFactory.openSession();
-		TypedQuery<Product> query = session.createQuery("FROM Inventory I where I product.Name=pName",Product.class);
+		TypedQuery<Product> query = session.createQuery("FROM Product P where P.product.Name=pName",Product.class);
 		query.setParameter("pName", productName);
 		
 		return query.getResultList();
 	
 	}
+
+	@Override
+	public Product updateProductById(int productId, Product product) {
+		// TODO Auto-generated method stub
+		
+		session = sessionFactory.openSession();
+		session.getTransaction().begin();
+		Product j = session.get(Product.class, productId);
+		session.getTransaction().commit();
+		if(j==null)
+		{
+			System.out.println("no such id found to update");
+			return null;
+			
+		}
+		else 
+		{
+			
+			j.setProductId(product.getProductId());
+			j.setProductName(product.getProductName());
+			j.setProductPrice(product.getProductPrice());
+			session.getTransaction().begin();
+			session.merge(j);
+			session.getTransaction().commit();
+			return j;
+			
+		}
+		
+	}
+
+	@Override
+	public void deleteProduct(int productid) {
+		// TODO Auto-generated method stub
+		
+		
+		session = sessionFactory.openSession();
+		session.getTransaction().begin();
+		Product j = session.get(Product.class, productid);
+		session.getTransaction().commit();
+		if(j==null)
+		{
+			System.out.println("no such id found to delete");
+			
+			
+		}
+		else
+		{ 
+			session.getTransaction().begin();
+			session.remove(j);
+			session.getTransaction().commit();
+			System.out.println("done");
+		}
+		
+		
+	}
+
+
+	
 
 }

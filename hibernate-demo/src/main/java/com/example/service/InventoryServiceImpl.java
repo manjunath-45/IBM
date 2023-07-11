@@ -91,7 +91,7 @@ public class InventoryServiceImpl implements InventoryService {
 		session.getTransaction().commit();
 		if(i==null)
 		{
-			System.out.println("no such id found to update");
+			System.out.println("no such id found to delete");
 			
 		}
 		else 

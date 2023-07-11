@@ -10,6 +10,7 @@ import com.example.model.Inventory;
 import com.example.model.Product;
 import com.example.service.InventoryService;
 import com.example.service.InventoryServiceImpl;
+import com.example.service.ProductServiceImpl;
 
 public class App
 {
@@ -17,7 +18,7 @@ public class App
 	{
       try
       { 
-    	 /* 
+    	/*  
     	  SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Inventory.class).addAnnotatedClass(Product.class).buildSessionFactory();
           Session session=sessionFactory.openSession();
           session.getTransaction().begin();
@@ -28,14 +29,14 @@ public class App
           
     	  */
     	 
-    	  InventoryService service=new InventoryServiceImpl();
+    	/*  InventoryService service=new InventoryServiceImpl(); */
+    	  ProductServiceImpl service1= new ProductServiceImpl();
     	  
-    	  /*
-    	  Inventory i = service.createInventory(new Inventory(105,108,"top",65));
-    	  Inventory j = service.createProduct(new Product(2,"top",65));
-    	  System.out.println(i); 
-    	  System.out.println(j); 
-    	  */
+    	/* Inventory i = service.createInventory(new Inventory(105,108,"top",65)); */
+    	/*  Product j = service1.createProduct(new Product(5,"inner",69)); */
+    	 /* System.out.println(i);*/ 
+    	 /* System.out.println(j); */
+    	  
           
     	  
     	 /*
@@ -44,9 +45,10 @@ public class App
     	  {
     		  System.out.println(i);
     	  }
-    	  
-    	  List<Product> j =  service.getAllProduct();
-    	  for(Inventory jj:j)
+    	  */
+    
+    	/*  List<Product> j =  service1.getAllProduct();
+    	  for(Product jj:j)
     	  {
     		  System.out.println(j);
     	  }
@@ -63,9 +65,9 @@ public class App
     	 {
     		 System.out.println(i);
     	 }
+    	*/ 
     	 
-    	 
-    	 Inventory  j = service.getAlProduct(101);
+    /*	 Product  j = service1.getAlProduct(1);
     	 if(j==null)
     	 {
     		 System.out.println("no such is product ");
@@ -75,8 +77,8 @@ public class App
     	 {
     		 System.out.println(j);
     	 }
-    	  */
     	  
+    */	  
           
           
     	 /* 
@@ -87,15 +89,17 @@ public class App
     	  {
     		System.out.println(i);  
     	  }
-    	    List<Product> list=service.getProductByName("mobile");
+    	  */
+    	  
+    	    List<Product> list=service1.getProductByName("jeans");
     	  
     	  for(Product j:list)
     	  {
     		System.out.println(j);  
     	  }
-    	  */
+    	  
           
-    	/*   
+    	 /*  
     	  Inventory i=service.updateInventoryById(100, new Inventory(107,"desktop",6798));
     	  System.out.println(i);
     	  
@@ -107,10 +111,23 @@ public class App
     	  {
     		  System.out.println("updated");
     	  }
-    	  
     	  */
+    	 Product j=service1.updateProductById(1,new Product("desktop",6798,100));
+    	  System.out.println(j);
+    	  
+    	  if(j==null) 
+    	  {
+    		  System.out.println("unable to update ");
+    	  }
+    	  else 
+    	  {
+    		  System.out.println("updated");
+    	  }
+    	  
           
-    	  service.deleteInventory(100);
+    	 
+    	 /* service.deleteInventory(100);*/
+    	/*  service1.deleteProduct(1);*/
       }
       catch(Exception e)
       {
