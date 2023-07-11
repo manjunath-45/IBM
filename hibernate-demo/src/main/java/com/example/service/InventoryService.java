@@ -12,4 +12,11 @@ public interface InventoryService {
 	public List<Inventory> getAllInventory();
 
 	public Inventory getAllnventory(int inventoryId);
+	
+	public List<Inventory> getInventoryByProductName(String productName);
+	
+	public Inventory updateInventoryById(int inventoryId, Inventory inventory);
+	
+	public void deleteInventory(int inventoryid);
+	
 }

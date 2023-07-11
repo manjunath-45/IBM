@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.example.model.Inventory;
+import com.example.model.Product;
 
 public class MyHibernateFactory {
    
@@ -16,7 +17,7 @@ public class MyHibernateFactory {
 	
 	{
 
-		sessionFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Inventory.class).buildSessionFactory();
+		sessionFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Inventory.class).addAnnotatedClass(Product.class).buildSessionFactory();
 		return sessionFactory;
 	}
 }

@@ -15,29 +15,20 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "inventory")
+@Table(name="Product")
 @Entity
 @ToString
 
 
-public class Inventory {
-    
+
+public class Product {
+	
 	@Id
-	@Column(name="inventory_id")
-	private int inventId;
 	@Column(name="product_id")
 	private int productId;
-	@Column(name ="product_name")
-	private String productName;
-	@Column(name ="aavailable")
-	private int available;
-	
-	public Inventory(int productId, String productName, int available) {
-		super();
-		this.productId = productId;
-		this.productName = productName;
-		this.available = available;
-	}
-	
-	
+	@Column(name="product_name")
+	private  String productName;
+	@Column(name="product_price")
+	private double productPrice;
+
 }
