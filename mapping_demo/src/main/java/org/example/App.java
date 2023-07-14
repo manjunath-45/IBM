@@ -19,6 +19,7 @@ public class App
         {
         	SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).addAnnotatedClass(Company.class).buildSessionFactory();
         	Session session =sessionFactory.openSession();
+        	/*
         	Employee employee1 = new Employee(new Random().nextInt(10000),"John","Doe","john@gmail.com");
         	Employee employee2 = new Employee(new Random().nextInt(10000),"Marry","public","marry@gmail.com");
         	Employee employee3 = new Employee(new Random().nextInt(10000),"Rahul","Dravid","rahul@gmail.com");
@@ -33,8 +34,11 @@ public class App
             ibm.setCompanyName("IBM INDIA");
             ibm.setCompanyAddress(new Address("Bangalore","Karnataka","bangalore","54312"));
         	ibm.setEmployees(list);
+        	*/
         	session.getTransaction().begin();
-        	session.save(ibm);
+        /*	session.save(ibm); */
+        	Company c= session.get(Company.class, "276c4561-7fae-4b58-815a-27ff241e749e");
+        	System.out.println(c);
         	session.getTransaction().commit();
         	System.out.println("company cretaed");
         }
