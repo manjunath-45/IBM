@@ -34,13 +34,41 @@ public class App
             ibm.setCompanyName("IBM INDIA");
             ibm.setCompanyAddress(new Address("Bangalore","Karnataka","bangalore","54312"));
         	ibm.setEmployees(list);
-        	*/
-        	session.getTransaction().begin();
-        /*	session.save(ibm); */
+         /* session.save(ibm); 
         	Company c= session.get(Company.class, "276c4561-7fae-4b58-815a-27ff241e749e");
         	System.out.println(c);
         	session.getTransaction().commit();
         	System.out.println("company cretaed");
+        	*/
+        	
+        	
+        	Employee employee1 = new Employee();
+        	employee1.setEmployeeId(11);
+        	employee1.setFirstName("ABC1");
+        	employee1.setLastName("MNC1");
+        	employee1.setEmail("abc1@email.com");
+            Company ibm = new Company();
+            
+            
+            Employee employee2 = new Employee();
+            employee2.setEmployeeId(21);
+        	employee2.setFirstName("XYZ1");
+        	employee2.setLastName("GFH1");
+        	employee2.setEmail("xyz1@email.com");
+        	
+            ibm.setCompanyId(UUID.randomUUID().toString());
+            ibm.setCompanyName("IBM INDIA");
+            ibm.setCompanyAddress(new Address("Bangalore","Karnataka","bangalore","54312"));
+        	employee1.setCompany(ibm);
+        	employee2.setCompany(ibm);
+    
+        	session.getTransaction().begin();
+        	session.save(employee1);
+         	session.getTransaction().commit();
+        	session.getTransaction().begin();
+        	session.save(employee2);
+        	session.getTransaction().commit();
+        	System.out.println("employees cretaed");
         }
         catch(Exception e)
         {
