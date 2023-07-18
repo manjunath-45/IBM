@@ -10,6 +10,12 @@ import org.springframework.stereotype.Component;
 //@Scope("prototype")
 public class Student {
 	
+	
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", id=" + id + "]";
+	}
+
 	private String name;
 	private int id;
 	public String getName() {

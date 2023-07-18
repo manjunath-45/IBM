@@ -9,7 +9,7 @@ public class Department {
    
 	private int departementId;
 	
-	@Value("${department.name}")
+	// @Value("${department.name}")
 	private String departmentName;
 	private Location location;
 	

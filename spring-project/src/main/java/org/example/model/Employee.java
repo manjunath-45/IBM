@@ -11,10 +11,10 @@ public class Employee {
 	
 	private int employeeId;
 	
-	@Value("${employee.name}")
+	//@Value("${employee.name}")
 	private String employeeName;
 	
-	@Value("${employee.salary}")
+	//@Value("${employee.salary}")
 	private double salary;
 	
 	private Department department;
