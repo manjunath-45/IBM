@@ -1,14 +1,20 @@
 package org.example.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Employee {
+    
 
 	
 	private int employeeId;
+	
+	@Value("${employee.name}")
 	private String employeeName;
+	
+	@Value("${employee.salary}")
 	private double salary;
 	
 	private Department department;
@@ -53,7 +59,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee Id: " + employeeId + " employeeName: " + employeeName + " salary: " + salary
+		return "Employee Id: " + employeeId + " employee Name: " + employeeName + " salary: " + salary
 				+ " department: " + department;
 	}
 	
