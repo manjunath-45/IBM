@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Department {
    
 	private int departementId;
@@ -13,7 +13,7 @@ public class Department {
 	private String departmentName;
 	private Location location;
 	
-	@Autowired
+	//@Autowired
 	public Department(Location location) {
 
 		this.location = location;

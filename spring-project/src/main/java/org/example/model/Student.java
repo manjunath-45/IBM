@@ -3,11 +3,14 @@ package org.example.model;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("s")
 //@Scope("prototype")
+@PropertySource(value = "classpath:config.properties")
 public class Student {
 	
 	
@@ -15,8 +18,9 @@ public class Student {
 	public String toString() {
 		return "Student [name=" + name + ", id=" + id + "]";
 	}
-
+    @Value("${student.name}")
 	private String name;
+    @Value("${student.id}")
 	private int id;
 	public String getName() {
 		return name;

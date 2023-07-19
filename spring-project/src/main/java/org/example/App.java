@@ -50,9 +50,13 @@ public class App
         	
        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class) 	;
        Student student = context.getBean("s",Student.class);
-       student.setId(1);
-       student.setName("john");
+       //student.setId(1);
+       //student.setName("john");
        System.out.println(student);
+       
+       Employee e=context.getBean("employee",Employee.class);
+       System.out.println(e);
+       
         }
         catch(Exception e)
         {
