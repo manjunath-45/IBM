@@ -8,29 +8,30 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
 @Setter
 @Getter
-
-@Component
 public class Car {
-  
-	private int CarId;
-	private String CarName;
+	
+	public Car(int int1, String string) {
+		// TODO Auto-generated constructor stub
+	}
+	private int carId;
+	private String carName;
 	public int getCarId() {
-		return CarId;
+		return carId;
 	}
 	public void setCarId(int carId) {
-		CarId = carId;
+		this.carId = carId;
 	}
 	public String getCarName() {
-		return CarName;
+		return carName;
 	}
 	public void setCarName(String carName) {
-		CarName = carName;
+		this.carName = carName;
 	}
 	
-	
+
 }
