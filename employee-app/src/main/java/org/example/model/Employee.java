@@ -15,29 +15,18 @@ public class Employee {
 	private String name;
 	private int age;
 	
-	
+
 	public String getName() {
-		return name;
+		// TODO Auto-generated method stub
+		return null;
 	}
-
-
-	public void setName(String name) {
-		this.name = name;
+	public String getAge() {
+		// TODO Auto-generated method stub
+		return null;
 	}
-
-
-	public int getAge() {
-		return age;
+	public Employee(String name, int age) {
+		// TODO Auto-generated constructor stub
 	}
-
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-
-	public Employee(String name2, int age2) {
-		
-	}
-
+	
+	
 }
