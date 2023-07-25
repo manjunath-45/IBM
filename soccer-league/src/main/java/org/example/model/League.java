@@ -17,7 +17,7 @@ public class League {
 	private String season;
 	private  String title;
 	public League(int i, String string, String string2) {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 	public int getYear() {
 		return year;
