@@ -34,7 +34,7 @@
   </servlet>
   <servlet-mapping>
   	<servlet-name>MyServlet</servlet-name>
-  	<url-pattern>/list_leagues.view</url-pattern>
+  	<url-pattern>/list_leagues.jsp</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>AddLeagueViewServlet</servlet-name>

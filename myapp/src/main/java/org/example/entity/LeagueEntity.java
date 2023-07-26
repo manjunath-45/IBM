@@ -24,6 +24,14 @@ public class LeagueEntity {
 	private String season;
 	private String title;
 	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	public LeagueEntity(int string, String season, String title) {
 		super();
 		this.year = string;
