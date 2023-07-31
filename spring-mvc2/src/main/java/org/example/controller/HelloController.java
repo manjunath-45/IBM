@@ -1,7 +1,9 @@
-package org.example.controller;
+ package org.example.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -44,20 +46,35 @@ public class HelloController {
 	 */
 
 	@PostMapping("/addEmployee")
-	public String addEmployee(@RequestParam(name = "t1") String name, @RequestParam(name = "t2") double age,
-			Model theModel) {
+	public String addEmployee(@RequestParam(name = "t1") String name, @RequestParam(name = "t2") String age, Model theModel) {
+		double tempAge =0;
+		List<String>  list = new ArrayList<>();
+		try {
+			tempAge = Double.parseDouble(age);
+		}
+		catch(Exception e) {
+			
+			list.add("Age field cannot be non numeric");
+		}
 		try {
 			Connection connection=dataSource.getConnection();
 			PreparedStatement pst=connection.prepareStatement("insert into employee(name,age) values(?,?)");
 			pst.setString(1, name);
-			pst.setDouble(2, age);
+			pst.setDouble(2, tempAge); 
 			pst.executeUpdate();
 
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		theModel.addAttribute("emp", new Employee(name, age));
+		if(list.isEmpty()) {
+			theModel.addAttribute("error",list);
+			return "showForm";
+		}
+		else 
+		{	
+		theModel.addAttribute("emp", new Employee(name, tempAge));
 		return "sucess";
+		}
 	}
 }

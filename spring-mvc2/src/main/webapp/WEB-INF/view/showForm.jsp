@@ -1,4 +1,6 @@
+<%@page import="java.util.List" %>
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -13,6 +15,14 @@
 		<h1>ADD EMPLOYEE</h1>
 	</p>
 	<hr/>
+	<%
+	   List<String> list =(List<String>)request.getAttribute("error");
+	   if(list!=null){
+		   for(String s :list){
+			   out.println(s);
+		   }
+	   }
+	%>
 	<form action="addEmployee" method="post">
 		<table>
 
